@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+float a[15][5];
+float sum[15];
+
+
+float *search(float (*a)[5] , int n)
+{
+    int i;
+    int max = 0;
+    int index = 0;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        if(sum[i] > max)
+        {
+            max = sum[i];
+            index = i;
+        }
+    }
+    printf("%d",max);
+    return a[i];
+}
+
+void print(float (*a)[5] , int n)
+{
+    for(int i = 1 ; i <= n ; i++)
+    printf("%d",*(a + i));
+}
+
+
+
+
+int main()
+{
+    int i;
+    for(i = 1; i<= 10 ; i++)
+    {
+        scanf("%f%f%f%f%f",&a[i][0],&a[i][1],&a[i][2],&a[i][3],&a[i][4]);
+        sum[i] = a[i][0] + a[i][1] + a[i][2] + a[i][3] + a[i][4];
+    }
+
+    int n;scanf("%d",&n);
+    printf("%p\n\n\n",search(a,n));
+
+    scanf("%d",&n);
+
+    print(a,n);
+
+    return 0;
+
+}
