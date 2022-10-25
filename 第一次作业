@@ -1,0 +1,52 @@
+#include<stdio.h>
+int main()
+{
+    int a[1000]={0};
+    int b[1000]={0};
+    int i=0;
+    int sum=0;
+    int book=0;
+    int junx=0;
+    int book2=0;
+    int cha=0;
+    int sum2=0;
+    int juny=0;
+    int cha2=0;
+    int zong=0;
+    int zong2=0;
+    int cha3=0;
+    int zong3=0;
+    int zhi=0;
+for(i=0;i<1000;i++){
+    scanf("%d,%d",&a[i],&b[i]);
+    if(a[i]="\n"){
+        break;
+    }
+}
+for(i=0;i<1000;i++){
+    sum+=a[i];
+    if(a[i]="\n"){
+        book=i;
+    }
+}
+for(i=0;i<1000;i++){
+    sum2+=b[i];
+    if(b[i]="\n"){
+        book2=i;
+    }
+}
+junx=sum/(book+1);
+juny=sum2/(book2+1);
+for(i=0;i<book;i++){
+    cha=(a[i]-junx);
+    cha2=b[i]-juny;
+    zong+=cha*cha2;
+}
+for(i=0;i<book;i++){
+    cha3=a[i]-junx;
+    zong2=cha3*cha3;
+    zong3+=zong2;
+}
+   zhi=zong/zong3;
+   return 0;
+}
